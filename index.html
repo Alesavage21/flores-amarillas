@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jardín 🌼</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(
+        to bottom,
+        #82d4ff 0%,
+        #b9ecff 55%,
+        #dff8ff 100%
+    );
+}
+/* ☀️ SOL */
+.sun {
+    position: absolute;
+    width: 110px;
+    height: 110px;
+    top: 45px;
+    right: 70px;
+    border-radius: 50%;
+    background: #ffe45c;
+    box-shadow:
+        0 0 30px #ffe97a,
+        0 0 80px rgba(255,220,70,.6);
+    animation: sun 5s ease-in-out infinite;
+}
+@keyframes sun {
+    50% {
+        transform: scale(1.08);
+    }
+}
+/* 🌿 CAMPO */
+.ground {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 35%;
+    background:
+        linear-gradient(
+            to bottom,
+            #65c94b,
+            #329334
+        );
+}
+/* 🌱 PASTO */
+.grass {
+    position: absolute;
+    bottom: 31%;
+    width: 100%;
+    height: 45px;
+    display: flex;
+    justify-content: space-around;
+}
+.blade {
+    width: 5px;
+    height: 45px;
+    background: #27802d;
+    border-radius: 100%;
+    transform-origin: bottom;
+    animation: grass 1.8s ease-in-out infinite;
+}
+.blade:nth-child(2n) {
+    animation-delay: .3s;
+}
+.blade:nth-child(3n) {
+    animation-delay: .7s;
+}
+@keyframes grass {
+    0%,100% {
+        transform: rotate(-6deg);
+    }
+    50% {
+        transform: rotate(8deg);
+    }
+}
+/* 🌼 FLOR */
+.flower {
+    position: absolute;
+    bottom: 28%;
+    width: 20px;
+    height: 230px;
+    transform-origin: bottom center;
+    animation: wind 3s ease-in-out infinite;
+}
+@keyframes wind {
+    0%,100% {
+        transform: rotate(-3deg);
+    }
+    50% {
+        transform: rotate(5deg);
+    }
+}
+/* 🌿 TALLO */
+.stem {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 7px;
+    height: 190px;
+    transform: translateX(-50%);
+    border-radius: 10px;
+    background: linear-gradient(
+        to right,
+        #26752b,
+        #55b943
+    );
+}
+/* 🍃 HOJAS */
+.leaf {
+    position: absolute;
+    width: 65px;
+    height: 25px;
+    background: #3c9f38;
+    border-radius: 100% 0 100% 0;
+}
+.leaf.left {
+    left: -43px;
+    bottom: 65px;
+    transform: rotate(-25deg);
+}
+.leaf.right {
+    right: -43px;
+    bottom: 105px;
+    transform: rotate(25deg) scaleX(-1);
+}
+/* 🌻 CABEZA DE LA FLOR */
+.head {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+/* 🌼 PÉTALOS */
+.petal {
+    position: absolute;
+    width: 34px;
+    height: 50px;
+    left: 28px;
+    top: 20px;
+    background: linear-gradient(
+        to bottom,
+        #fff36b,
+        #ffc400
+    );
+    border-radius: 50%;
+    transform-origin: 17px 25px;
+    box-shadow: 0 2px 5px rgba(0,0,0,.12);
+}
+.petal:nth-child(1) {
+    transform: rotate(0deg) translateY(-24px);
+}
+.petal:nth-child(2) {
+    transform: rotate(45deg) translateY(-24px);
+}
+.petal:nth-child(3) {
+    transform: rotate(90deg) translateY(-24px);
+}
+.petal:nth-child(4) {
+    transform: rotate(135deg) translateY(-24px);
+}
+.petal:nth-child(5) {
+    transform: rotate(180deg) translateY(-24px);
+}
+.petal:nth-child(6) {
+    transform: rotate(225deg) translateY(-24px);
+}
+.petal:nth-child(7) {
+    transform: rotate(270deg) translateY(-24px);
+}
+.petal:nth-child(8) {
+    transform: rotate(315deg) translateY(-24px);
+}
+/* 🌻 CENTRO */
+.center {
+    position: absolute;
+    width: 37px;
+    height: 37px;
+    left: 26px;
+    top: 27px;
+    border-radius: 50%;
+    background:
+        radial-gradient(
+            circle,
+            #a96808 0%,
+            #704000 65%,
+            #4b2900 100%
+        );
+    z-index: 5;
+}
+/* 🌼 MUCHAS FLORES */
+.f1 { left: 2%;  transform: scale(.65); animation-delay: .2s; }
+.f2 { left: 8%;  transform: scale(.9);  animation-delay: 1s; }
+.f3 { left: 15%; transform: scale(.55); animation-delay: .4s; }
+.f4 { left: 22%; transform: scale(1.1); animation-delay: 1.5s; }
+.f5 { left: 29%; transform: scale(.7); animation-delay: .8s; }
+.f6 { left: 36%; transform: scale(1); animation-delay: .3s; }
+.f7 { left: 44%; transform: scale(.6); animation-delay: 1.2s; }
+.f8 { left: 51%; transform: scale(1.2); animation-delay: .5s; }
+.f9 { left: 59%; transform: scale(.75); animation-delay: 1.7s; }
+.f10 { left: 66%; transform: scale(1); animation-delay: .6s; }
+.f11 { left: 73%; transform: scale(.6); animation-delay: 1.1s; }
+.f12 { left: 80%; transform: scale(1.1); animation-delay: .2s; }
+.f13 { left: 88%; transform: scale(.7); animation-delay: 1.4s; }
+.f14 { left: 94%; transform: scale(.95); animation-delay: .9s; }
+/* 🌼 PÉTALOS QUE CAEN */
+.falling {
+    position: absolute;
+    top: -30px;
+    width: 14px;
+    height: 21px;
+    background: #ffd21c;
+    border-radius: 100% 0 100% 0;
+    opacity: .8;
+    animation:
+        fall linear infinite;
+}
+@keyframes fall {
+    0% {
+        transform:
+            translateY(-40px)
+            rotate(0deg);
+    }
+    100% {
+        transform:
+            translateY(110vh)
+            translateX(160px)
+            rotate(720deg);
+    }
+}
+.p1 { left: 4%;  animation-duration: 9s; }
+.p2 { left: 12%; animation-duration: 12s; animation-delay: 2s; }
+.p3 { left: 21%; animation-duration: 8s; animation-delay: 1s; }
+.p4 { left: 31%; animation-duration: 11s; animation-delay: 4s; }
+.p5 { left: 42%; animation-duration: 9s; animation-delay: 2s; }
+.p6 { left: 53%; animation-duration: 13s; animation-delay: 3s; }
+.p7 { left: 64%; animation-duration: 8s; animation-delay: 1s; }
+.p8 { left: 75%; animation-duration: 12s; animation-delay: 4s; }
+.p9 { left: 87%; animation-duration: 10s; animation-delay: 2s; }
+.p10 { left: 96%; animation-duration: 14s; animation-delay: 5s; }
+/* 🌫️ PROFUNDIDAD */
+.haze {
+    position: absolute;
+    bottom: 28%;
+    width: 100%;
+    height: 100px;
+    background: rgba(255,255,255,.08);
+    filter: blur(15px);
+}
+</style>
+</head>
+<body>
+<div class="sun"></div>
+<div class="haze"></div>
+<!-- Pétalos flotando -->
+<div class="falling p1"></div>
+<div class="falling p2"></div>
+<div class="falling p3"></div>
+<div class="falling p4"></div>
+<div class="falling p5"></div>
+<div class="falling p6"></div>
+<div class="falling p7"></div>
+<div class="falling p8"></div>
+<div class="falling p9"></div>
+<div class="falling p10"></div>
+<div class="ground"></div>
+<!-- Pasto -->
+<div class="grass">
+    <div class="blade"></div><div class="blade"></div>
+    <div class="blade"></div><div class="blade"></div>
+    <div class="blade"></div><div class="blade"></div>
+    <div class="blade"></div><div class="blade"></div>
+    <div class="blade"></div><div class="blade"></div>
+    <div class="blade"></div><div class="blade"></div>
+    <div class="blade"></div><div class="blade"></div>
+    <div class="blade"></div><div class="blade"></div>
+    <div class="blade"></div><div class="blade"></div>
+</div>
+<!-- Flores -->
+<script>
+const posiciones = [
+    "f1","f2","f3","f4","f5","f6","f7",
+    "f8","f9","f10","f11","f12","f13","f14"
+];
+function crearFlor(clase) {
+    const flor = document.createElement("div");
+    flor.className = "flower " + clase;
+    flor.innerHTML = `
+        <div class="head">
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="center"></div>
+        </div>
+        <div class="stem"></div>
+        <div class="leaf left"></div>
+        <div class="leaf right"></div>
+    `;
+    document.body.appendChild(flor);
+}
+posiciones.forEach(crearFlor);
+</script>
+</body>
+</html>
